@@ -1,0 +1,13 @@
+module.exports = (db)=>{
+        let fs = require('fs')
+        let lock = '.db|[basic]collections<-created|'
+        let exists = fs.fileExistsSync(lock)
+        if(!exists) {                
+                require('./#Shapes/Collections.js').forEach((x)=>{
+                        db.createCollection( x , ()=>{
+                                console.info(`[: >] Collection "${x}" created`)
+                        } )        
+                })
+                fs.fileWriteSync(lock, 'installed!')
+        }
+}

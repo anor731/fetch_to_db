@@ -1,0 +1,10 @@
+const CoinGecko = require('coingecko-api')
+const CoinGeckoClient = new CoinGecko();
+ 
+//3. Make calls
+var func = async() => {
+  let data = await CoinGeckoClient.ping();
+  let ver = await CoinGeckoClient.coins.list();
+  console.log(ver)
+};
+
