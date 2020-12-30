@@ -1,2 +1,0 @@
-// URI(withDB), uName, uPass, DB
-module.exports = ["mongodb://localhost:27017/cryptoData?poolSize=230&w=majority", "filler", "wisdom", "cryptoData"]
